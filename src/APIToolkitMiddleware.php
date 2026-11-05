@@ -72,9 +72,9 @@ class APIToolkitMiddleware
   {
       $path = $request->getUri()->getPath();
       $query = $request->getUri()->getQuery();
-      $routeContext = RouteContext::fromRequest($request);
-      $route = $routeContext->getRoute();
-      $pattern = $route->getPattern();
+      // No route when nothing matched (404) or routing hasn't run on this request yet.
+      $route = $request->getAttribute(RouteContext::ROUTE);
+      $pattern = $route ? $route->getPattern() : $path;
       $pathWithQuery = $path . ($query ? '?' . $query : '');
       $pathParams = $this->extractPathParams($pattern, $path);
       $resBodyContent =  "";
