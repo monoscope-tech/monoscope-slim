@@ -90,6 +90,8 @@ $app->get('/', function ($request, $response) {
 $app->run();
 ```
 
+To record the matched route pattern (e.g. `/users/{id}`) and its path params, call `$app->addRoutingMiddleware();` after `$app->add($apitoolkitMiddleware);`. Without that, and for unmatched paths, the raw request path is recorded.
+
 > [!NOTE]
 >
 > The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the [API key](https://apitoolkit.io/docs/dashboard/settings-pages/api-keys?utm_campaign=devrel&utm_medium=github&utm_source=sdks_readme) generated from the APItoolkit dashboard.

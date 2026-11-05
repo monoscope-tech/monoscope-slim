@@ -18,7 +18,7 @@
     "require": {
         "php": "^7.4 || ^8.0",
         "ext-json": "*",
-        "apitoolkit/common": "^1.0",
+        "apitoolkit/common": "^1.0.7",
         "monolog/monolog": "^3.5",
         "open-telemetry/api": "^1.1",
         "ramsey/uuid": "^4.7",
